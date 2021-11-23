@@ -102,9 +102,10 @@ try:
     else:
         print("Multas")
         send_ticket_notification()
-
+    browser.quit()
 
 
 except Exception as e:
     print(f"Error: {e}")
     send_ticket_notification()
+    browser.quit()
