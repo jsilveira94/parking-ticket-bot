@@ -11,9 +11,14 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument('cfg', help='cfg path')
+args = parser.parse_args()
 
 
-config_path = "/home/juli/Proyectos/parking-ticket-bot/configs/ptb.conf"
+config_path = args.cfg
 
 if not Path(config_path).exists():
     raise Exception(f"Config file {config_path} not found")
