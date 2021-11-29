@@ -91,8 +91,14 @@ try:
     else:
         print("Tickets detected! Sending notification through mqtt")
         mqtt_client.send_ticket_notification(plate)
-        
 
 except Exception as e:
     print(f"Error: {e}")
     mqtt_client.send_error_notification(plate)
+
+finally:
+    browser.quit()
+
+
+
+
