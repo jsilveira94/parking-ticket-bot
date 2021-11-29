@@ -1,0 +1,6 @@
+selenium==4.0.0
+webdriver-manager==3.5.2
+paho-mqtt==1.6.1
+configparser==5.1.0
+
+
