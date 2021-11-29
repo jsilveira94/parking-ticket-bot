@@ -15,10 +15,12 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument('cfg', help='cfg path')
+parser.add_argument('--debug', action='store_true', help="with this flag executes selenium in an window")
 args = parser.parse_args()
 
 
 config_path = args.cfg
+debug_mode = args.debug
 
 if not Path(config_path).exists():
     raise Exception(f"Config file {config_path} not found")
@@ -43,7 +45,8 @@ mqtt_client = MqttClient("client1", broker_mqtt_ip)
 
 try:
     chrome_options = Options()
-    #chrome_options.add_argument("--headless")
+    if not debug_mode:
+        chrome_options.add_argument("--headless")
     chrome_options.add_argument("--no-sandbox")
     browser  = webdriver.Chrome(options=chrome_options)
 
