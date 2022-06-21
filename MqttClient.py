@@ -17,7 +17,7 @@ class MqttClient:
         """ Sends ticket notification"""
         self.client.publish(f"{self.channel_name}/{car_plate}", "ticket_detected")
     
-    def send_no_ticker_notification(self, car_plate: str) -> None:
+    def send_no_ticket_notification(self, car_plate: str) -> None:
         """ Sends no ticket notification"""
         self.client.publish(f"{self.channel_name}/{car_plate}", "no_ticket_detected")
     
