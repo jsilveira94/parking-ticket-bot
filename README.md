@@ -1,5 +1,5 @@
 # parking-ticket-bot
-Easypark A Coruña parking ticket bot. Checks if your car have been fined.
+Easypark A Coruña parking ticket bot. Checks if your car has been fined.
 
 Each time the script is executed sends a MQTT message topic `parking_ticket_bot/{CAR_PLATE}` with payload:
 * ticket_detected
